@@ -3,18 +3,22 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>13.5.0</Version>
+    <Version>13.5.1</Version>
     <Authors>Trevor Fayas</Authors>
     <Company>Heartland Business Systems</Company>
-    <Description>This restores the "Wildcard URL" feature of Kentico Portal Engine / RM.DynamicRoutingWildcards.Kentico.MVC.
+    <Description>Allows adding of Alternative Urls for a page (such as /Members/{username}) and this will route matching requests to your page, adding the {parameter} to the RouteValues.
 
-You can add Alternative Urls for a page (such as /Members/{username}) and this will route matching requests to your page, adding the {parameter} to the RouteValues.
+This restores the "Wildcard URL" feature of Kentico Portal Engine / RM.DynamicRoutingWildcards.Kentico.MVC.
 
-Can also specify controller/actions with the format /MyPage/{param1}/{param2}/{controller=SomeControllerName}{action=SomeActionName}  and it will redirect /MyPage/Something/Anything to the SomeControllerNameController with SomeActionName action (default index).</Description>
+</Description>
     <PackageIcon>hbs-favicon-96x96.png</PackageIcon>
     <PackageTags>Kentico, Xperience, URL, Dynamic Routing, WildCard</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Added Microsoft.SourceLink.GitHub</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/KenticoDevTrev/WildcardUrls/blob/master/README.md</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <AssemblyVersion>13.5.1.0</AssemblyVersion>
+    <FileVersion>13.5.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,10 +26,14 @@ Can also specify controller/actions with the format /MyPage/{param1}/{param2}/{c
     <PackageReference Include="Kentico.Xperience.AspNetCore.WebApp" Version="13.0.5" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\hbs-favicon-96x96.png">
+    <None Include="..\..\hbs-favicon-96x96.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

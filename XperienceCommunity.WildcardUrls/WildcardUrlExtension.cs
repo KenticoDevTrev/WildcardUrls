@@ -5,7 +5,7 @@ using XperienceCommunity.WildcardUrls.Internal;
 
 namespace XperienceCommunity.WildcardUrls
 {
-    public static class WildcardRoutingExtension
+    public static class WildcardUrlExtension
     {
 
         /// <summary>
@@ -13,7 +13,7 @@ namespace XperienceCommunity.WildcardUrls
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddWildcardPageBuilderRouting(this IServiceCollection services)
+        public static IServiceCollection AddWildcardUrls(this IServiceCollection services)
         {
             return services.AddSingleton<IWildcardRegisterPageRouteRetriever, WildcardRegisterPageRouteRetriever>()
                 .AddSingleton<WildcardRoutingValueTransformer>();
@@ -24,7 +24,7 @@ namespace XperienceCommunity.WildcardUrls
         /// </summary>
         /// <param name="builder"></param>
         /// <returns></returns>
-        public static IEndpointRouteBuilder UseWildcardPageBuilderRouting(this IEndpointRouteBuilder builder)
+        public static IEndpointRouteBuilder UseAddWildcardUrls(this IEndpointRouteBuilder builder)
         {
             builder.MapDynamicControllerRoute<WildcardRoutingValueTransformer>("{**pagepath}");
             return builder;
